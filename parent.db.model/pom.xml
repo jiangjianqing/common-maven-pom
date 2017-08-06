@@ -25,6 +25,14 @@
 		<!-- 20160129:如果想使用BaseEntityBean带来的便利，则引入，并且Entity都需要继承自BaseEntityBean -->
 
 		<!-- 外部库 -->
+		<!-- 20170806 加入原因：在model中需要使用DynamicUpdate和DynamicInsert注解 -->
+		<!-- 20170806 在5.x中已经标记deprecated，合并在hibernate-core中，但测试未成功，需要关注 -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>4.3.6.Final</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
