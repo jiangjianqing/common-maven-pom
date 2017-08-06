@@ -45,6 +45,18 @@
 	        <version>1.3</version>
 	        <scope>test</scope>
 	    </dependency>
+	    <!-- 去除spring中依赖的 commons-logging-->
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-core</artifactId>  
+	        <version>${springframework.version}</version>  
+	        <exclusions>  
+	            <exclusion>  
+	                <groupId>commons-logging</groupId>  
+	                <artifactId>commons-logging</artifactId>  
+	            </exclusion>  
+	        </exclusions>  
+	    </dependency> 
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
