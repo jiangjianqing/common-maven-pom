@@ -24,20 +24,21 @@
 		    <version>5.0.4</version>
 		</dependency>
 
-        <!-- 20170808 添加 mybatis通用Mapper插件，关键是其支持jpa语法 -->
+		<!-- 20170808 由于mapper引用了旧版本的jpa 1.0规范，这里需要将其排除  -->
+        <!-- 20170808 添加 mybatis通用Mapper插件，关键是其支持jpa语法，但其目前只支持单表，故停用
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
             <version>3.4.2</version>
             <exclusions>  
-                <!-- 20170808 由于mapper引用了旧版本的jpa 1.0规范，这里需要将其排除  -->
+                
 	            <exclusion>  
 	                <groupId>javax.persistence</groupId>
                     <artifactId>persistence-api</artifactId>
 	            </exclusion>  
 	        </exclusions>  
         </dependency>
-
+ -->
 		<!-- 20150925 特别注意： 1、OpenJPA在2.4时只支持jpa 2.0规范（JSR-317 Java Persistence 
 			2.0） 2、Hibernate 4.3.6.Final已经支持jpa 2.1规范 3、选择OpenJPA还是Hibernate的同时也就确定了要支持的jpa规范版本 -->
 		<!-- 20160122 切换为openjpa2.4失败，原因可产看resource/backup/persistence-openjpa.xml中的描述 -->
