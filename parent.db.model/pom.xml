@@ -150,48 +150,6 @@
                 </dependencies> 
             </plugin> 
 			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>${maven.bundle.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<manifestLocation>${manifest.location}</manifestLocation>
-					<supportedProjectTypes>
-						<supportedProjectType>war</supportedProjectType>
-						<supportedProjectType>bundle</supportedProjectType>
-						<supportedProjectType>jar</supportedProjectType>
-					</supportedProjectTypes>
-					<instructions>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-						<!-- 20160117 使用c3p0没有成功 -->
-						<!-- 20160122 openjpa 测试失败，hibernate和openjpa需要2选1 -->
-						<!-- 20160123 非常重要：如果出现hibernate.hbm2ddl.auto无效等情况，请查看这里的设置一定要正确 -->
-						<Import-Package>
-							!org.apache.openjpa.persistence,
-							!org.apache.openjpa.enhance,
-							!org.apache.openjpa.util,
-
-							org.hibernate.proxy,
-							javassist.util.proxy,
-							*
-						</Import-Package>
-						<Bundle-ClassPath>{maven-dependencies},.</Bundle-ClassPath>
-						<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
-						<Embed-Directory>lib</Embed-Directory>
-					</instructions>
-				</configuration>
-				<executions>
-					<execution>
-						<id>bundle-manifest</id>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>manifest</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
