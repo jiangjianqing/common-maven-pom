@@ -149,16 +149,6 @@
                     </dependency>  
                 </dependencies> 
             </plugin> 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifestFile>${manifest.location}/MANIFEST.MF</manifestFile>
-						<addMavenDescriptor>false</addMavenDescriptor>
-					</archive>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
