@@ -189,7 +189,8 @@
 	<build>
 		<!-- filters中定义了变量配置文件的地址，其中地址中的环境变量就是上面profile中定义的值 -->
 		<filters>  
-            <filter>config/db-${env}.properties</filter>  
+            <filter>config/db/db-${env}.properties</filter>
+            <filter>config/log4j/log4j-${env}.properties</filter>  
         </filters>  
         <!-- resources中是定义哪些目录下的文件会被配置文件中定义的变量替换，一般我们会把项目的配置文件放在src/main/resources下
         	，像db,bean等，里面用到的变量在打包时就会根据filter中的变量配置替换成固定值 -->
